@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KEY SUCCESS | SRT X</title>
+    <style>
+        body { background: #000; color: white; font-family: sans-serif; text-align: center; display: flex; align-items: center; justify-content: center; height: 100vh; margin: 0; }
+        .neon-box { border: 2px solid #ccff00; padding: 30px; width: 90%; max-width: 380px; background: #080808; }
+        .logo { width: 80px; height: 80px; border-radius: 50%; border: 2px solid #ccff00; margin-bottom: 10px; }
+        #loader { display: block; }
+        #content { display: none; }
+        .key { font-size: 45px; font-weight: bold; color: #fff; text-shadow: 0 0 15px #ccff00; margin: 15px 0; }
+        .timer { font-size: 20px; color: #ccff00; margin: 10px 0; }
+    </style>
+</head>
+<body>
+
+    <div class="neon-box">
+        <img src="logo.png" class="logo">
+        
+        <div id="loader">
+            <h2 style="color: #ccff00;">PLEASE WAIT...</h2>
+            <div class="timer" id="countdown">3</div>
+            <p>YOUR KEY IS ALMOST READY</p>
+        </div>
+
+        <div id="content">
+            <h3 style="color: #ccff00; border-bottom: 1px solid #333; padding-bottom: 10px;">KEY VERIFICATION SUCCESSFUL</h3>
+            <p style="margin-top:20px; color:#888;">Your Key Is:</p>
+            <div class="key">9827</div>
+            <p style="font-size: 14px; color: #666;">1 KEY 1 DEVICE LOGIN</p>
+            <p style="color: #ccff00; font-weight: bold; margin-top: 15px;">VERIFICATION SUCCESSFUL</p>
+        </div>
+    </div>
+
+    <script>
+        let timeLeft = 3;
+        let timerElement = document.getElementById('countdown');
+        
+        let countdown = setInterval(function() {
+            timeLeft--;
+            timerElement.textContent = timeLeft;
+            if (timeLeft <= 0) {
+                clearInterval(countdown);
+                document.getElementById('loader').style.display = 'none';
+                document.getElementById('content').style.display = 'block';
+            }
+        }, 1000);
+    </script>
+</body>
+</html>
